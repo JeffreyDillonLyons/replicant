@@ -17,16 +17,16 @@ account = trading_client.get_account()
 market_order_data = MarketOrderRequest(
 
                     symbol = "BTC/USD",
-                    qty = 1,
-                    side = OrderSide.BUY,
+                    qty = 3.99,
+                    side = OrderSide.SELL,
                     time_in_force = TimeInForce.GTC
                     
                     )
 
 market_order = trading_client.submit_order(market_order_data)
 
-print(market_order)
-
+for key,value in market_order:
+  print(key,value)
 
      
 
